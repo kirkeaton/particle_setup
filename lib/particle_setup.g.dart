@@ -150,7 +150,8 @@ Scan _$ScanFromJson(Map json) {
   return Scan()
     ..ssid = json['ssid'] as String
     ..channel = json['ch'] as int
-    ..wifiSecurityType = const WifiSecurityConverter().fromJson(json['sec']);
+    ..wifiSecurityType = const WifiSecurityConverter().fromJson(json['sec'])
+    ..wifiSignalStrength = const WifiSignalStrengthConverter().fromJson(json['rssi']);
 }
 
 Map<String, dynamic> _$ScanToJson(Scan instance) {
