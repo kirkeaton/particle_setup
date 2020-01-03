@@ -1,15 +1,16 @@
 part of particle_setup;
 
 class WifiSignalStrength {
-  static const EXCELLENT = 0;
+  static const EXCELLENT = -30;
   static const GOOD = -60;
   static const FAIR = -70;
   static const WEAK = -85;
+  static const DEAD = -100;
 
   final int _value;
 
   WifiSignalStrength(value): 
-    _value = (value < -30 || value > -100) ? value : null;
+    _value = (value < EXCELLENT || value > DEAD) ? value : null;
 
   int toInt() {
     return _value;
