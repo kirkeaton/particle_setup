@@ -30,3 +30,4 @@ part 'src/commands/version_command.dart';
 // utils
 part 'src/utils/crypto.dart';
 part 'src/utils/wifi_security.dart';
+part 'src/utils/wifi_signal_strength.dart';
