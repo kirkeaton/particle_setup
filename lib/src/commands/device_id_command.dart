@@ -29,7 +29,7 @@ class DeviceIdResponse implements Response {
   Map<dynamic, dynamic> toJson() => _$DeviceIdResponseToJson(this);
 
   static bool _isClaimedFromString(String value) {
-    return int.parse(value) == 1 ? true : false;
+    return int.tryParse(value) == 1 ? true : false;
   }
 
   static String _isClaimedToString(bool value) {
