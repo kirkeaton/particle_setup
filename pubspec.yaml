@@ -2,7 +2,7 @@ name: particle_setup
 description: Flutter library to send commands to Particle IoT devices (https://www.particle.io/).
 author: Kirk Eaton <kirk.eaton@gmail.com>
 homepage: https://github.com/kirkeaton/particle_setup
-version: 0.1.0
+version: 0.2.0
 
 environment:
   sdk: '>=2.1.0 <3.0.0'
