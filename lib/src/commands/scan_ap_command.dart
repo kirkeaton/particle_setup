@@ -33,6 +33,9 @@ class Scan {
   @JsonKey(name: 'ch')
   int channel;
 
+  @JsonKey(name: 'rssi')
+  int rssi;
+
   @JsonKey(name: 'sec')
   @WifiSecurityConverter()
   WifiSecurity wifiSecurityType;
