@@ -9,8 +9,8 @@ class WifiSignalStrength {
 
   final int _value;
 
-  WifiSignalStrength(value): 
-    _value = (value < EXCELLENT || value > DEAD) ? value : null;
+  WifiSignalStrength(value)
+      : _value = (value < EXCELLENT || value > DEAD) ? value : null;
 
   int toInt() {
     return _value;
