@@ -1,5 +1,6 @@
 part of particle_setup;
 
+/// Command to set a key-value pair on the device.
 @JsonSerializable()
 class SetCommand extends Command {
   @JsonKey(name: 'k')
@@ -26,6 +27,7 @@ class SetCommand extends Command {
   Map<dynamic, dynamic> toJson() => _$SetCommandToJson(this);
 }
 
+/// Response received after successfully sending a [SetCommand].
 @JsonSerializable()
 class SetResponse implements Response {
   @JsonKey(name: 'r')

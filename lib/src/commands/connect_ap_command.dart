@@ -1,7 +1,9 @@
 part of particle_setup;
 
+/// Command to connect a Particle device to an access point previously configured using [ConfigureAPCommand].
 @JsonSerializable()
 class ConnectAPCommand extends Command {
+  /// Access point index
   @JsonKey(name: 'idx')
   int index;
 
@@ -23,6 +25,7 @@ class ConnectAPCommand extends Command {
   Map<dynamic, dynamic> toJson() => _$ConnectAPCommandToJson(this);
 }
 
+/// Response received after successfully sending a [ConnectAPCommand].
 @JsonSerializable()
 class ConnectAPResponse implements Response {
   @JsonKey(name: 'r')

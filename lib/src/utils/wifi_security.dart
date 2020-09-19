@@ -1,23 +1,33 @@
 part of particle_setup;
 
+/// Enum containing all of the support Wi-Fi security methods.
 class WifiSecurity {
-  static const OPEN = const WifiSecurity._(0); // Unsecured
-  static const WEP_PSK =
-      const WifiSecurity._(1); // WEP Security with open authentication
-  static const WEP_SHARED =
-      const WifiSecurity._(0x8001); // WEP Security with shared authentication
-  static const WPA_TKIP_PSK =
-      const WifiSecurity._(0x00200002); // WPA Security with TKIP
-  static const WPA_AES_PSK =
-      const WifiSecurity._(0x00200004); // WPA Security with AES
-  static const WPA_MIXED_PSK =
-      const WifiSecurity._(0x00200006); // WPA Security with AES & TKIP
-  static const WPA2_AES_PSK =
-      const WifiSecurity._(0x00400004); // WPA2 Security with AES
-  static const WPA2_TKIP_PSK =
-      const WifiSecurity._(0x00400002); // WPA2 Security with TKIP
-  static const WPA2_MIXED_PSK =
-      const WifiSecurity._(0x00400006); // WPA2 Security with AES & TKIP
+  /// Unsecured.
+  static const OPEN = const WifiSecurity._(0);
+
+  /// WEP Security with open authentication.
+  static const WEP_PSK = const WifiSecurity._(1);
+
+  /// WEP Security with shared authentication.
+  static const WEP_SHARED = const WifiSecurity._(0x8001);
+
+  /// WPA Security with TKIP.
+  static const WPA_TKIP_PSK = const WifiSecurity._(0x00200002);
+
+  /// WPA Security with AES.
+  static const WPA_AES_PSK = const WifiSecurity._(0x00200004);
+
+  /// WPA Security with AES & TKIP.
+  static const WPA_MIXED_PSK = const WifiSecurity._(0x00200006);
+
+  /// WPA2 Security with AES.
+  static const WPA2_AES_PSK = const WifiSecurity._(0x00400004);
+
+  /// WPA2 Security with TKIP.
+  static const WPA2_TKIP_PSK = const WifiSecurity._(0x00400002);
+
+  /// WPA2 Security with AES & TKIP.
+  static const WPA2_MIXED_PSK = const WifiSecurity._(0x00400006);
 
   static Map<int, WifiSecurity> _fromIntMap =
       Map.unmodifiable(<int, WifiSecurity>{
@@ -34,6 +44,7 @@ class WifiSecurity {
 
   static List<WifiSecurity> _asList = _fromIntMap.values.toList();
 
+  /// Returns the supported Wi-Fi security methods as a list.
   static List<WifiSecurity> asList() {
     return _asList;
   }
@@ -42,6 +53,7 @@ class WifiSecurity {
 
   const WifiSecurity._(this._value);
 
+  /// Returns an integer representation of this object.
   int toInt() {
     return _value;
   }
@@ -72,17 +84,20 @@ class WifiSecurity {
     }
   }
 
+  /// Converts an integer represetation back to a [WifiSecurity] object.
   static WifiSecurity fromInt(int value) {
     return _fromIntMap.containsKey(value) ? _fromIntMap[value] : null;
   }
 
   static const int _ENTERPRISE_ENABLED_MASK = 0x02000000;
 
+  /// Determines if network is using enterprise security.
   static bool isEnterpriseNetwork(int value) {
     return (_ENTERPRISE_ENABLED_MASK & value) != 0;
   }
 }
 
+/// Class to convert a [WifiSecurity] object to and from JSON.
 class WifiSecurityConverter implements JsonConverter<WifiSecurity, Object> {
   const WifiSecurityConverter();
 
