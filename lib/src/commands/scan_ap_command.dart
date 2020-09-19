@@ -1,5 +1,6 @@
 part of particle_setup;
 
+/// Command to get a list of wi-fi networks visible to the device.
 class ScanAPCommand extends Command {
   @override
   String getCommandName() {
@@ -7,6 +8,7 @@ class ScanAPCommand extends Command {
   }
 }
 
+/// Response received after successfully sending a [ScanAPCommand].
 @JsonSerializable()
 class ScanAPResponse implements Response {
   @JsonKey(name: 'scans')

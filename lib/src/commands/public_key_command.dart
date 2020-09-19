@@ -1,5 +1,6 @@
 part of particle_setup;
 
+/// Command to get the device's public key.
 class PublicKeyCommand extends Command {
   @override
   String getCommandName() {
@@ -7,6 +8,7 @@ class PublicKeyCommand extends Command {
   }
 }
 
+/// Response received after successfully sending a [PublicKeyCommand].
 @JsonSerializable()
 class PublicKeyResponse implements Response {
   @JsonKey(name: 'r')

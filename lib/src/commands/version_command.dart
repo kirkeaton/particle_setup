@@ -1,5 +1,6 @@
 part of particle_setup;
 
+/// Command to get the version of the device.
 class VersionCommand extends Command {
   @override
   String getCommandName() {
@@ -7,6 +8,7 @@ class VersionCommand extends Command {
   }
 }
 
+/// Response received after successfully sending a [VersionCommand].
 @JsonSerializable()
 class VersionResponse implements Response {
   @JsonKey(name: 'v')

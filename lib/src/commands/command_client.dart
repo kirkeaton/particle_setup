@@ -1,17 +1,23 @@
 part of particle_setup;
 
+/// Factory class to establish socket connections with the device.
 class SocketFactory {
+  /// The maximum allowed time in milliseconds to wait for a connection to be established.
   final int timeoutMillis;
 
+  /// Create a socket factory with the provided timeout.
   SocketFactory(this.timeoutMillis);
 
+  /// Establish a new socket connection to the host and port.
   Future<Socket> createSocket(String host, int port) {
     return Socket.connect(host, port,
         timeout: Duration(milliseconds: timeoutMillis));
   }
 }
 
+/// Client used to send commands to the device.
 class CommandClient {
+  /// The default time in seconds to wait for a connection to be established.
   static const int DEFAULT_TIMEOUT_SECONDS = 10;
 
   final String host;
@@ -23,6 +29,7 @@ class CommandClient {
   factory CommandClient() => CommandClient._(
       '192.168.0.1', 5609, SocketFactory(DEFAULT_TIMEOUT_SECONDS * 1000));
 
+  /// Sends a command to the device.
   Future<T> sendCommand<T extends Response>(Command command) async {
     Socket socket;
 

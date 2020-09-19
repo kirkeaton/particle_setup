@@ -1,5 +1,6 @@
 part of particle_setup;
 
+/// Command to get the unique device identifier as a 24-digit hex string.
 class DeviceIdCommand extends Command {
   @override
   String getCommandName() {
@@ -7,6 +8,7 @@ class DeviceIdCommand extends Command {
   }
 }
 
+/// Response received after successfully sending a [DeviceIdCommand].
 @JsonSerializable()
 class DeviceIdResponse implements Response {
   @JsonKey(name: 'id')

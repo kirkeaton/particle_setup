@@ -1,12 +1,16 @@
 part of particle_setup;
 
+/// Abstract class representing a command that can be sent to the device.
 abstract class Command {
+  /// Returns the name of this command.
   String getCommandName();
 
+  /// Returns the command arguments as a JSON string.
   String getArgsAsJsonString() {
     return null;
   }
 
+  /// Returns the formatted command data to be sent to the device.
   String getCommandData() {
     StringBuffer buffer = StringBuffer();
     buffer.write(getCommandName());
@@ -25,9 +29,12 @@ abstract class Command {
   }
 }
 
+/// Abstract class representing a response received from the device.
 abstract class Response {
+  /// Returns whether the response was OK or not.
   bool isOk();
 
+  /// Converts the response received from the device from JSON to a Response object.
   factory Response.fromJson(Map<dynamic, dynamic> json, Type type) {
     switch (type) {
       case ConfigureAPResponse:

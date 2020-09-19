@@ -47,8 +47,8 @@ Sets the device's claim code.
 
 ### configureAP
 
-Configure the device's wifi network
+Configure the device's wi-fi network
 
 ### connectAP
 
-Connects the device to a previously configured wi-fi network.
+Connects the device to the previously configured wi-fi network.
