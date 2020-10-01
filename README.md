@@ -1,5 +1,7 @@
 # particle_setup
 
+[![Kirk Eaton](https://circleci.com/gh/kirkeaton/particle_setup.svg?style=svg)](https://circleci.com/gh/kirkeaton/particle_setup)
+
 Flutter library to send commands to Particle devices ([https://www.particle.io/](https://www.particle.io/)).
 
 **Note:** This plugin has only been tested using the Photon wi-fi module.
