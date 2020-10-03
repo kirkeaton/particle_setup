@@ -1,7 +1,7 @@
 name: particle_setup
 description: Dart library to send commands to Particle IoT devices (https://www.particle.io/).
 homepage: https://github.com/kirkeaton/particle_setup
-version: 0.3.0
+version: 0.3.1
 
 environment:
   sdk: '>=2.1.0 <3.0.0'
