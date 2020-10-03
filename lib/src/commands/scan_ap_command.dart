@@ -42,11 +42,11 @@ class Scan {
   @WifiSecurityConverter()
   WifiSecurity wifiSecurityType;
 
-  @JsonKey(name: 'rssi')
-  @WifiSignalStrengthConverter()
-  WifiSignalStrength wifiSignalStrength;
-
   Scan();
+
+  WifiSignalStrength get wifiSignalStrength {
+    return WifiSignalStrength(this.rssi);
+  }
 
   factory Scan.fromJson(Map<dynamic, dynamic> json) => _$ScanFromJson(json);
 

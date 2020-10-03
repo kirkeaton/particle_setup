@@ -45,19 +45,3 @@ class WifiSignalStrength {
     return '${_value}dB ($strength)';
   }
 }
-
-/// Class to convert a [WifiSignalStrength] object to and from JSON.
-class WifiSignalStrengthConverter
-    implements JsonConverter<WifiSignalStrength, Object> {
-  const WifiSignalStrengthConverter();
-
-  @override
-  WifiSignalStrength fromJson(Object json) {
-    return WifiSignalStrength(json);
-  }
-
-  @override
-  Object toJson(WifiSignalStrength object) {
-    return object.toInt();
-  }
-}
