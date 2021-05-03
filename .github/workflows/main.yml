@@ -18,4 +18,5 @@ jobs:
         with:
           sdk: ${{ matrix.sdk }}
       - run: dart pub get
-      - run: dart test
+      - run: dart pub run build_runner build
+      - run: dart pub run build_runner test
